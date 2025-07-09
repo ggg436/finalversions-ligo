@@ -28,19 +28,9 @@ const main = async () => {
         imageSrc: "/es.svg",
       },
       {
-        id: 2,
-        title: "Italian",
-        imageSrc: "/it.svg",
-      },
-      {
-        id: 3,
-        title: "French",
-        imageSrc: "/fr.svg",
-      },
-      {
-        id: 4,
-        title: "Croatian",
-        imageSrc: "/hr.svg",
+        id: 5,
+        title: "English",
+        imageSrc: "/en.svg",
       },
     ]);
 
@@ -50,6 +40,13 @@ const main = async () => {
         courseId: 1, // Spanish
         title: "Unit 1",
         description: "Learn the basics of Spanish",
+        order: 1,
+      },
+      {
+        id: 2,
+        courseId: 5, // English
+        title: "Unit 1",
+        description: "Learn the basics of English",
         order: 1,
       }
     ]);
@@ -85,6 +82,42 @@ const main = async () => {
         order: 5,
         title: "Verbs",
       },
+      {
+        id: 6,
+        unitId: 2, // English Unit 1
+        order: 1,
+        title: "Nouns",
+      },
+      {
+        id: 7,
+        unitId: 2, // English Unit 1
+        order: 2,
+        title: "Verbs",
+      },
+      {
+        id: 8,
+        unitId: 2, // English Unit 1
+        order: 3,
+        title: "Adjectives",
+      },
+      {
+        id: 9,
+        unitId: 2, // English Unit 1
+        order: 4,
+        title: "Pronouns",
+      },
+      {
+        id: 10,
+        unitId: 2, // English Unit 1
+        order: 5,
+        title: "Prepositions",
+      },
+      {
+        id: 11,
+        unitId: 2, // English Unit 1
+        order: 6,
+        title: "Conjunctions",
+      },
     ]);
 
     await db.insert(schema.challenges).values([
@@ -108,6 +141,41 @@ const main = async () => {
         type: "SELECT",
         order: 3,
         question: 'Which one of these is the "the robot"?',
+      },
+      {
+        id: 7,
+        lessonId: 6, // English Nouns
+        type: "SELECT",
+        order: 1,
+        question: 'Which one of these is "the cat"?',
+      },
+      {
+        id: 8,
+        lessonId: 6, // English Nouns
+        type: "ASSIST",
+        order: 2,
+        question: '"the cat"',
+      },
+      {
+        id: 9,
+        lessonId: 6, // English Nouns
+        type: "SELECT",
+        order: 3,
+        question: 'Which one of these is "the dog"?',
+      },
+      {
+        id: 10,
+        lessonId: 6, // English Nouns
+        type: "ASSIST",
+        order: 4,
+        question: '"the dog"',
+      },
+      {
+        id: 11,
+        lessonId: 6, // English Nouns
+        type: "SELECT",
+        order: 5,
+        question: 'Which one of these is "the apple"?',
       },
     ]);
 
